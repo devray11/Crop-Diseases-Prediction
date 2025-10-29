@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Early Blight</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1100px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .container:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Content Section */
+        .content {
+            text-align: center;
+        }
+
+        .content h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            text-align: justify;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .content b {
+            color: #27ae60;
+        }
+
+        .medicine b {
+            color: #27ae60;
+        }
+
+        /* Image Styling */
+        .image-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Medicines Section */
+        .medicine-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .medicine {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .medicine-content img {
+            max-width: 150px; 
+            height: 150px;    
+            object-fit: cover; 
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .medicine p {
+            font-size: 1.1em;
+            color: #333;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1>Tomato Early Blight</h1>
+
+            <div class="image-box">
+                <img src="{{ url_for('static', filename='Tomato_early_blight.webp') }}" alt="Tomato Early Blight">
+            
+            </div>
+
+            <p> Tomato early blight, caused by the fungus <b>Alternaria solani</b>, is a common disease affecting tomato plants. It leads to dark spots on leaves, stems, and fruits, significantly reducing yield and quality.</p>
+
+            <p>Symptoms include small, brown lesions with concentric rings that gradually expand. Infected leaves turn yellow and die, weakening the plant. Severe infections can affect stems and fruits, leading to significant losses.</p>
+
+            <p>The disease spreads through spores carried by wind, water, and contaminated soil. Favorable conditions include warm, humid weather, making it difficult to control once established.</p>
+
+            <p>Effective management includes crop rotation, resistant varieties, and timely application of fungicides.</p>
+        </div>
+
+        <div class="content">
+            <h1>Medicines</h1>
+        </div>
+        
+        <div class="medicine-container">
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='mancozeb.jpeg') }}" alt="Mancozeb">
+                    <p><b>Mancozeb:</b> A protective fungicide commonly used to prevent and control early blight in tomatoes.</p>
+                </div>
+            </div>
+
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Chlorothalonil_Tomato_early.webp') }}" alt="Chlorothalonil">
+                    <p><b>Chlorothalonil:</b> A broad-spectrum fungicide effective in controlling fungal infections in tomatoes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="medicine-container" style="margin-top: 20px;">
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Azoxystrobin.png') }}" alt="Azoxystrobin">
+                    <p><b>Azoxystrobin:</b> A systemic fungicide providing long-lasting protection against early blight.</p>
+                </div>
+            </div>
+
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Copper_Oxychlorid.webp') }}" alt="Copper Oxychloride">
+                    <p><b>Copper Oxychloride:</b> A contact fungicide widely used to control early blight in tomatoes.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

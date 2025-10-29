@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Late Blight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9f9f9, #e3f2fd);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(39, 174, 96, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content h1 {
+            color: #333;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .content p {
+            text-align: justify;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .content b {
+            color: #27ae60;
+        }
+
+        .image-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            top: -50px;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            bottom: -30px;
+            right: -30px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .medicine-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .medicine {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .medicine::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(39, 174, 96, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+
+        .medicine:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .medicine-content img {
+            max-width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .medicine-content img:hover {
+            transform: scale(1.1);
+        }
+
+        .medicine p {
+            font-size: 1.1em;
+            color: #333;
+            margin-top: 15px;
+            font-weight: bold;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .content h1 {
+                font-size: 2em;
+            }
+
+            .content p {
+                font-size: 1em;
+            }
+
+            .medicine {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+
+        <div class="content">
+            <h1>Tomato Late Blight</h1>
+
+            <div class="image-box">
+                <img src="{{ url_for('static', filename='tomato_late_blight.jpeg') }}" alt="Tomato Late Blight">
+            </div>
+
+            <p>Tomato late blight, caused by the pathogen <b>Phytophthora infestans</b>, is a destructive disease affecting tomato plants. It leads to large, dark, water-soaked lesions on leaves, stems, and fruits, often resulting in complete crop loss.</p>
+
+            <p>Symptoms include irregularly shaped brown or black spots that rapidly enlarge. Leaves may appear greasy and wilt, leading to defoliation. Infected fruits develop dark, firm lesions that spread quickly.</p>
+
+            <p>The disease spreads through spores in moist and cool conditions. It can survive in infected plant debris, making it difficult to control.</p>
+
+            <p>Effective management includes removing infected plants, improving air circulation, and using fungicides.</p>
+        </div>
+
+        <div class="content">
+            <h1>Medicines</h1>
+        </div>
+        
+        <div class="medicine-container">
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Mancozeb.jpeg') }}" alt="Mancozeb">
+                    <p><b>Mancozeb:</b> A protective fungicide commonly used to prevent and control late blight in tomatoes.</p>
+                </div>
+            </div>
+
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Chlorothalonil_late.jpeg') }}" alt="Chlorothalonil">
+                    <p><b>Chlorothalonil:</b> A broad-spectrum fungicide effective in controlling fungal infections in tomatoes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="medicine-container" style="margin-top: 20px;">
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Azoxystrobin.png') }}" alt="Azoxystrobin">
+                    <p><b>Azoxystrobin:</b> A systemic fungicide providing long-lasting protection against late blight.</p>
+                </div>
+            </div>
+
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Copper_Oxychlorid.webp') }}" alt="Copper Oxychloride">
+                    <p><b>Copper Oxychloride:</b> A contact fungicide widely used to control late blight in tomatoes.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

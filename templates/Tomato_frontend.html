@@ -1,0 +1,195 @@
+<!-- Save this as Tomato_frontend.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tomato Disease Detection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 550px;
+            transition: 0.3s ease-in-out;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #3e9638;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hover-red {
+            color: inherit;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .hover-red:hover {
+            color: red;
+        }
+
+        p.instruction {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .upload-area {
+            border: 2px dashed #b30000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            color: #b30000;
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .upload-area:hover {
+            background: rgba(179, 0, 0, 0.1);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        #imagePreview {
+            display: none;
+            width: 100%;
+            max-height: 220px;
+            object-fit: cover;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 2px solid #b30000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #imagePreview:hover {
+            transform: scale(1.05);
+        }
+
+        .buttons {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        button {
+            background: linear-gradient(to right, #b30000, #ff3333);
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #ff3333, #b30000);
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .preview-img {
+            margin-top: 15px;
+            max-width: 100%;
+            border-radius: 10px;
+            border: 2px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="{{ url_for('static', filename='Tomato_video.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h2>🌿 Tomato <span class="hover-red">Disease</span> Detection 🌿</h2>
+        <p class="instruction">Upload a clear image of the crop to detect any diseases. Click or drag & drop the image below.</p>
+        
+        <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/tomato_detection">
+            <label for="imageUpload" class="upload-area">Click or Drag & Drop Image Here</label>
+            <input type="file" name="image" id="imageUpload" accept="image/*" required>
+            <img id="imagePreview" alt="Uploaded Image">
+
+            <div class="buttons">
+                <button type="submit">Detect Disease</button>
+            </div>
+        </form>
+
+        {% if predicted_label and confidence %}
+        <p id="result">
+            Detected Disease: <span style="color:red">{{ predicted_label }}</span><br>
+            Confidence: <span style="color:green">{{ confidence }}%</span>
+        </p>
+        {% endif %}
+
+        {% if image_path %}
+        <img src="{{ url_for('static', filename=image_path.split('static/')[-1]) }}" alt="Predicted Image" class="preview-img">
+        {% endif %}
+    </div>
+
+    <script>
+        const imageUpload = document.getElementById("imageUpload");
+        const imagePreview = document.getElementById("imagePreview");
+
+        imageUpload.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

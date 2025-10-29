@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Late Blight</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1100px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .container:hover {
+            transform: scale(1.02);
+        }
+        
+        .content {
+            text-align: center;
+        }
+
+        .content h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            text-align: justify;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .content b {
+            color: #27ae60;
+        }
+
+        .medicine b {
+            color: #27ae60;
+        }
+
+        /* Image Styling */
+        .image-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Medicines Section */
+        .medicine-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .medicine {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .medicine-content img {
+            max-width: 150px; 
+            height: 150px;    
+            object-fit: cover; 
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .medicine p {
+            font-size: 1.1em;
+            color: #333;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .medicine-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .medicine {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1>Potato Late Blight</h1>
+
+            <div class="image-box">
+                <img src="{{ url_for('static', filename='Potato_late_blight.jpg') }}" alt="Potato Late Blight">
+            </div>
+            <p>Potato late blight, caused by the oomycete pathogen <b>Phytophthora infestans</b>, is one of the most devastating diseases in potato cultivation worldwide. This pathogen thrives in cool, wet conditions and was responsible for the Irish potato famine in the 1840s. The disease can lead to rapid and severe crop losses, affecting both the foliage and tubers of potato plants.</p> 
+            <p>The symptoms of late blight typically begin with water-soaked lesions on the leaves, which quickly turn brown and spread. White fungal growth may appear on the underside of the leaves, particularly in humid conditions. Unlike early blight, late blight lesions do not have concentric rings. The infection spreads rapidly, causing leaves to wilt and die, leading to a complete collapse of the plant if not controlled.</p>
+            <p>In addition to foliage damage, late blight affects potato tubers by causing firm, brownish-purple lesions on the skin. When cut open, the tubers display a reddish-brown, granular rot that can extend deep into the flesh. This not only reduces yield but also severely impacts the storage quality of the potatoes, as infected tubers can rot quickly and spread the disease to healthy ones during storage.</p>
+            <p>The disease spreads through airborne spores that can travel long distances, as well as through water and contaminated plant material. Rain and irrigation water facilitate the movement of spores from leaves to the soil, where they can infect tubers. Cool temperatures (10°C to 20°C) coupled with high humidity (above 90%) create ideal conditions for the pathogen to thrive and spread rapidly.</p>
+            <p>Managing late blight requires a multi-faceted approach. Integrated disease management strategies include planting certified disease-free seed potatoes, practicing crop rotation, and removing volunteer potato plants and cull piles that can harbor the pathogen. Fungicide applications are also commonly used, especially during periods of high disease risk, but reliance on chemicals alone can lead to resistance in the pathogen population.</p>
+            <p>Resistant potato varieties play a critical role in managing late blight. Breeding programs have developed varieties with partial resistance, helping to reduce disease severity. However, due to the adaptability of <i>Phytophthora infestans</i>, continuous research and breeding efforts are needed to keep up with emerging strains of the pathogen.</p> 
+            <p>Climate change poses additional challenges for managing potato late blight. Increased rainfall, prolonged periods of high humidity, and changing temperature patterns can extend the disease's favorable conditions, making it more difficult to predict and control outbreaks. As a result, ongoing research into sustainable management practices and resistant potato varieties is essential for securing potato yields and ensuring food security worldwide.</p>
+        </div>
+
+        <div class="content">
+            <h1>Medicines</h1>
+        </div>
+        
+        <div class="medicine-container">
+            <div class="medicine" style="width: 48%;">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Mancozeb.jpeg') }}" alt="Mancozeb">
+                    <p><b>Mancozeb:</b> A broad-spectrum contact fungicide that prevents spore germination. It is often used as a protective spray before infection occurs.</p>
+                </div>
+            </div>
+
+            <div class="medicine" style="width: 48%;">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Metalaxyl.jpeg') }}" alt="Metalaxyl">
+                    <p><b>Metalaxyl:</b> A systemic fungicide that helps control late blight by inhibiting fungal growth inside the plant. It is commonly mixed with other fungicides for better effectiveness.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="medicine-container" style="margin-top: 20px;">
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Chlorothalonil_late.jpeg') }}" alt="Chlorothalonil">
+                    <p><b>Chlorothalonil:</b> A contact fungicide that provides preventive protection against late blight. It works by creating a barrier on leaf surfaces.</p>
+                </div>
+            </div>
+
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='Cymoxanil.avif') }}" alt="Cymoxanil">
+                    <p><b>Cymoxanil:</b> A locally systemic fungicide that provides both preventive and curative action. It is effective when applied at the early stages of infection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

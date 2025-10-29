@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+        h1 {
+            margin-bottom: 40px;
+            font-size: 3rem;
+        }
+        .hover-red {
+            color: inherit; 
+            transition: color 0.3s ease-in-out;
+        }
+        .hover-red:hover {
+            color: red;
+        }
+        .crop-selection {
+            display: flex;
+            gap: 40px;
+        }
+        .crop-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            width: 300px;
+        }
+        .crop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        .crop-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .crop-card h2 {
+            margin: 20px 0;
+            font-size: 2rem;
+        }
+        #selected-crop {
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="{{ url_for('static', filename='crop_frontend.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="container">
+        <h1>🌿 Crop <span class="hover-red">Diseases</span> Detection 🌿</h1>
+        <div class="crop-selection" id="cropSelection">
+
+
+            <div class="crop-card" onclick="redirectToPage('{{ url_for('tomato_detection') }}')">
+                <img src="{{ url_for('static', filename='Tomato_image.png') }}" alt="Tomato">
+                <h2>Tomato</h2>
+            </div>
+            
+            
+
+            <div class="crop-card" onclick="redirectToPage('{{ url_for('potato_detection') }}')">
+                <img src="{{ url_for('static', filename='Potato_image.webp') }}" alt="Potato">
+                <h2>Potato</h2>
+            </div>
+        </div>
+
+        <p id="selected-crop">Please select a crop for which you want to detect diseases.</p>
+    </div>
+
+    <script>
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Early Blight</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .content h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            text-align: justify;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .content b, .medicine b {
+            color: #27ae60;
+        }
+
+        .image-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+        }
+
+        .medicine-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .medicine {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .medicine-content img {
+            max-width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .medicine p {
+            font-size: 1.1em;
+            color: #333;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .medicine-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .medicine {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1>Potato Early Blight</h1>
+
+            <div class="image-box">
+                <img src="{{ url_for('static', filename='Potato_early_blight.jpeg') }}" alt="Potato Early Blight">
+            </div>
+
+            <p>Potato early blight, caused by the fungus <b>Alternaria solani</b>, is a destructive disease that affects potatoes worldwide. This fungal pathogen thrives in warm, humid conditions and is considered one of the most important diseases in potato cultivation. It manifests as lesions on the leaves, stems, and tubers, significantly impacting crop yield and quality.</p>
+
+            <p>The disease is characterized by small, dark spots on the upper leaves, which gradually expand, forming concentric rings. These lesions eventually cause the leaves to turn yellow and die, limiting the plant's ability to photosynthesize. Early blight also affects stems and tubers, causing black lesions that hinder the plant's growth and reduce storage life. The infection typically starts at the lower leaves and moves upwards, weakening the plant’s overall health.</p>
+
+            <p>The disease is spread through spores that can travel by wind, water, or infected plant material. This makes the disease difficult to control, as it can infect entire fields in a short period. The spores germinate in the presence of moisture and favorable temperatures, typically between 18°C and 27°C, which are ideal for fungal growth. Infected plants release more spores, which spread to neighboring plants, further exacerbating the problem.</p>
+
+            <p>Potato early blight not only impacts yield but also reduces the quality of the harvested potatoes. The lesions on the tubers make them susceptible to secondary infections and rot during storage, leading to significant post-harvest losses. Farmers often face economic losses due to the reduced marketability and storage potential of affected potatoes.</p>
+
+            <p>The fungus *Alternaria solani* produces mycotoxins that can also pose a risk to human health when contaminated potatoes are consumed. While early blight is not typically associated with direct toxicity to humans, the presence of these toxins makes it important to manage the disease effectively to ensure food safety. In addition to reducing crop quality, early blight can contribute to the spread of other potato diseases, further complicating crop management.</p>
+
+            <p>Environmental factors play a crucial role in the development of potato early blight. Excessive rainfall, high humidity, and poor air circulation create favorable conditions for the pathogen to thrive. On the other hand, dry conditions or temperatures outside the optimal range for the fungus can help reduce the severity of the disease. Because the disease spreads quickly and can be difficult to control once established, early detection is critical for effective management.</p>
+
+            <p>Integrated disease management strategies are essential for controlling potato early blight. These strategies often involve a combination of cultural practices, resistant potato varieties, and regular monitoring of environmental conditions. Cultural practices include crop rotation, proper spacing of plants, and the removal of infected plant debris. These practices help reduce the inoculum load in the soil and limit the spread of the disease. Resistant varieties, although not completely immune, can help reduce the impact of the disease.</p>
+
+            <p>Despite these efforts, potato early blight remains a persistent challenge for farmers. Climate change, which leads to unpredictable weather patterns and more frequent extreme conditions, may exacerbate the spread of the disease. Therefore, ongoing research into more effective control measures, including the development of resistant potato varieties and more sustainable management practices, is crucial to mitigating the impact of this disease on global potato production.</p>
+        </div>
+
+        <div class="content">
+            <h1>Medicines</h1>
+        </div>
+
+        <div class="medicine-container">
+            <div class="medicine" style="width: 48%;">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='fluopyram_fungicide.webp') }}" alt="Fluopyram-based Fungicides">
+                    <p><b>Fluopyram-based fungicides:</b> Products such as Luna Tranquility, Luna Pro, and Velum Rise have demonstrated efficacy against early blight.</p>
+                </div>
+            </div>
+
+            <div class="medicine" style="width: 48%;">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='prothioconazole_fluopyram.jpeg') }}" alt="Prothioconazole & Fluopyram">
+                    <p><b>Prothioconazole & Fluopyram:</b> Fungicides like Proline GOLD and Propulse utilize these active ingredients to provide robust protection.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="medicine-container" style="margin-top: 20px;">
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='chlorothalonil_mancozeb.jpeg') }}" alt="Chlorothalonil & Mancozeb">
+                    <p><b>Chlorothalonil & Mancozeb:</b> These protective fungicides are commonly applied weekly, starting when plants reach 6 inches in height.</p>
+                </div>
+            </div>
+
+            <div class="medicine">
+                <div class="medicine-content">
+                    <img src="{{ url_for('static', filename='azoxystrobin_boscalid.jpg') }}" alt="Azoxystrobin & Boscalid">
+                    <p><b>Azoxystrobin & Boscalid:</b> Fungicides containing these active ingredients have shown effectiveness against early blight.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
