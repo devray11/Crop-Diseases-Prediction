@@ -21,3 +21,12 @@ This automated solution aims to mitigate agricultural losses, reduce the excessi
   * **Machine Learning:** TensorFlow, Keras
   * **Data Processing:** NumPy, Matplotlib
   * **Core Model:** Convolutional Neural Network (CNN)
+
+![Frontend Output](https://github.com/devray11/Crop-Diseases-Prediction/blob/13b9faf3573ca41c3938377ec9b1bf2209db0a33/Frontend-Output-Image.png)
+
+![Tomato Output](https://github.com/devray11/Crop-Diseases-Prediction/blob/13b9faf3573ca41c3938377ec9b1bf2209db0a33/Tomato-Output-Image.png)
+
+![Potato Output](https://github.com/devray11/Crop-Diseases-Prediction/blob/13b9faf3573ca41c3938377ec9b1bf2209db0a33/Potato-Output-Image.png)
+
+![Medicine Output](https://github.com/devray11/Crop-Diseases-Prediction/blob/13b9faf3573ca41c3938377ec9b1bf2209db0a33/Medicine-Output-Image.png)
+
